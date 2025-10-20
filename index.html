@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jiang's Page</title>
+  <style>
+    /* --- 全域設定 --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', '微軟正黑體', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f9d4e8, #c7e9fb);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      transition: background 1s ease;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 60px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* --- 個人資料區 --- */
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
+      animation: float 3s ease-in-out infinite;
+      object-fit: cover;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .name {
+      font-size: 1.8em;
+      margin-top: 15px;
+    }
+
+    .name span {
+      color: #e75480;
+    }
+
+    .intro {
+      margin: 10px 0 30px;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* --- 連結按鈕 --- */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn {
+      background: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #ffe6f2;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    /* --- RWD 手機版 --- */
+    @media (max-width: 600px) {
+      .avatar {
+        width: 90px;
+        height: 90px;
+      }
+
+      .name {
+        font-size: 1.4em;
+      }
+
+      .intro {
+        font-size: 1em;
+      }
+
+      .btn {
+        font-size: 0.9em;
+        padding: 10px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <!-- 換成你的大頭照連結 -->
+      <img src="https://i.imgur.com/Qv7pP8R.jpg" alt="profile" class="avatar">
+      <h1 class="name">Hi, I'm <span>Jiang</span></h1>
+      <p class="intro">高中生｜喜歡美妝與時尚穿搭 💄👗</p>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/你的GitHub帳號" target="_blank" class="btn">💻 GitHub</a>
+      <a href="mailto:你的Email@gmail.com" class="btn">📧 Email</a>
+      <a href="https://www.linkedin.com/in/你的LinkedIn" target="_blank" class="btn">💼 LinkedIn</a>
+      <a href="https://www.instagram.com/你的IG" target="_blank" class="btn">📸 Instagram</a>
+    </div>
+  </div>
+
+  <footer>© 2025 Jiang | Made with ❤️</footer>
+
+  <script>
+    // --- 背景顏色自動漸變 ---
+    const colors = [
+      ['#f9d4e8', '#c7e9fb'],
+      ['#ffe6f2', '#e0f7fa'],
+      ['#fad0c4', '#ffd1ff']
+    ];
+    let i = 0;
+    setInterval(() => {
+      document.body.style.background = `linear-gradient(135deg, ${colors[i][0]}, ${colors[i][1]})`;
+      i = (i + 1) % colors.length;
+    }, 4000);
+  </script>
+</body>
+</html>
